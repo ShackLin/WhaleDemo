@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Import Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="./CSS/Slider.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BannerSlider</title>
+
+</head>
+
+<body>
+  <div class="slideshow-container">
+    <div class="container-fluid text-center p-0 ">
+      <div class="row g-0 mySlides">
+        <div class="col-lg-6 col-sm-12" style="padding-top:50px;">
+          <span style="font-size: 45px;color:#B62C24; font-family: 微軟正黑體;font-weight: 900;">2023 兔吉利來</span><br>
+          <span style="font-size: 45px;color: #CC6633;font-family: 微軟正黑體;font-weight: 900;">兔年吉祥 兔年如意</span>
+          <p style="color: #7A9451;font-size: 20px;line-height: 29px;font-weight: 700;">
+            新春吉祥 財源廣進<br>
+            兔年好運 四季平安
+          </p>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+          <img src="./Images//2.jpg" style="width:100%;height:310px;">
+        </div>
+      </div>
+      <div class="row g-0 mySlides">
+        <div class="col-lg-6 col-sm-12" style="padding-top:50px;">
+          <span style="font-size: 45px; color: #0E6EB8;font-weight: 900;">
+            通過國際標準</span><br>
+          <span style="font-size: 45px; color:#FA6739!important;;font-weight: 900;">IS0 27001</span><span
+            style="font-size: 45px; color: #0E6EB8;font-weight: 900;">資安認證</span>
+          <div style="height: 3px;width: 52px;background: #0E6EB8;position: relative;left:120px;"></div>
+          <p style="font-size: 22px;line-height: 29px;color: #0E6EB8;font-weight: 700;">
+            我們努力做到最好<br>
+            提供您最完整的電子發票服務
+          </p>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+          <img src="./Images/1.png" style="width:100%;height:310px;">
+        </div>
+      </div>
+      <div class="row g-0 mySlides">
+        <div class="col-lg-6 col-sm-12" style="padding-top:50px;">
+          <span style="font-size: 45px; color: #FA6739;font-weight: 900;">
+            鯨躍科技</span><br>
+          <span style="font-size: 45px; color:#FA6739!important;;font-weight: 900;">電子發票加值中心</span><br>
+          <p style="font-size: 22px;line-height: 29px;color:#FA6739;
+        ;font-weight: 700;">
+            行政法規、系統技術、實務經驗<br>
+            三位一體成就完正解決方案
+          </p>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+          <img src="./Images/3.jpg" style="width:100%;height:310px;">
+        </div>
+      </div>
+      <!-- <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a> -->
+    </div>
+    <br>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+  </div>
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "flex";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 1000); // Change image every 2 seconds
+    }
+  </script>
+</body>
+
+</html>

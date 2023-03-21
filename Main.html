@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Import Styled.css -->
+    <link href="./CSS//Styled.css" rel="stylesheet">
+    <!-- Import Scroll.css -->
+    <link rel="stylesheet" href="./CSS/Scroll.css">
+    <!-- Import Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Import FontAwesome -->
+    <link rel="stylesheet" href="https://kit.fontawesome.com/966137b21f.css" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/966137b21f.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- Import GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <!-- Import JQuery  -->
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+   <script>
+      $(function() {
+         $("#showSlider").load("BannerSlider.html");
+      });
+      $(function() {
+           $("#showSlider2").load("BannerSlider2.html");
+        });
+   </script>
+    <!-- Import GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>藍鯨科技電子發票加值服務</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!--  Navbar Start -->
+        <div class="Navbar">
+           <a href="https://www.cetustek.com.tw/index.php" class='NavLogo'></a>
+           <div class="Navbar-Hambuger" >
+            <a href="#!" class="icon" onclick="ShowHam()">
+                <i class="fa fa-bars" style="font-size: 40px;color:black;"></i>
+            </a>
+           </div>
+           <div class="Navbar-collect">
+            <ul class="Navbar-nav">
+                <li class="Nav-Items">
+                    <a href="https://www.cetustek.com.tw/about.php" class="Nav-Links">關於我們</a>
+                </li>
+                <li class="Nav-Items">
+                    <a href="#!" class="Nav-Links">產品方案</a>
+                    <div class="dropdown-options">
+                        <a href="https://www.cetustek.com.tw/invoice.php" class="options-link">電子發票</a>
+                    </div>
+                </li>
+                <li class="Nav-Items">
+                    <a href="#!" class="Nav-Links">客戶服務</a>
+                    <div class="dropdown-options">
+                        <a href="https://www.cetustek.com.tw/service.php" class="options-link">營業人</a>
+                        <a href="https://www.cetustek.com.tw/support.php" class="options-link">消費者</a>
+                        <a href="https://www.cetustek.com.tw/einvoicefaq.php" class="options-link">電子發票小學堂</a>
+                    </div>
+                </li>
+                <li class="Nav-Items">
+                    <a href="#!" class="Nav-Links">客戶案例</a>
+                    <div class="dropdown-options">
+                        <a href="https://www.cetustek.com.tw/clients.php#about-clients" class="options-link">嚴選客戶</a>
+                        <a href="https://www.cetustek.com.tw/clients.php#clients-review" class="options-link">客戶心得</a>
+                    </div>
+                </li>
+                <li class="Nav-Items">
+                    <a href="#!" class="Nav-Links">部落格</a>
+                    <div class="dropdown-options">
+                        <a href="https://www.cetustek.com.tw/blogmtInvoice" class="options-link">電子發票</a>
+                    </div>
+                </li>
+                <li class="Nav-Items">
+                    <a href="https://www.cetustek.com.tw/memberlogin.php" class=" Nav-Links BasicBtn">會員登入</a>
+                </li>
+            </ul>
+           </div>
+        </div>
+        <!--  Navbar Ende -->
+        <!-- Hamburger Menu when size under 1200 px Start -->
+        <div class="Hambuger-Menu" id="show5">
+            <div style="margin-bottom:20px">
+                <a href="#!" style="font-size:20px;text-decoration: none;color:black;position: relative;left:10px;" onClick="DeleteShow()">❌</a>
+            </div>
+            <div class="Hambuger-Navbar">
+                <ul class="Hambuger-Nav">
+                    <li class="Hambuger-NavItems">
+                        <a href="https://www.cetustek.com.tw/about.php" class="Hamgurger-Links">關於我們</a>
+                    </li>
+                    <li class="Hambuger-NavItems">
+                        <a href="#!" class="Hamgurger-Links">產品方案<span style="position: absolute;right:0;" onclick="myFunction1()">✔<span></a>
+                    </li>
+                    <div style="position:relative;right:32px;display:none;" id="show1">
+                        <a class="HamClcikShow" href="https://www.cetustek.com.tw/invoice.php">電子發票</a>
+                    </div>
+                    <li class="Hambuger-NavItems">
+                        <a href="#!" class="Hamgurger-Links">客戶服務<span style="position: absolute;right:0;" onclick="myFunction2()">✔<span></span></a>
+                    </li>
+                    <div style="position:relative;right:32px;display:none;" id="show2">
+                        <a class="HamClcikShow" href="https://www.cetustek.com.tw/service.php">營業人</a>
+                        <a class="HamClcikShow" href="https://www.cetustek.com.tw/support.php">消費者</a>
+                        <a class="HamClcikShow" href="https://www.cetustek.com.tw/einvoicefaq.php">電子發票小學堂</a>
+                    </div>
+                    <li class="Hambuger-NavItems">
+                        <a href="#!" class="Hamgurger-Links" >客戶案例<span style="position: absolute;right:0;" onclick="myFunction3()">✔<span></span></a>
+                    </li>
+                    <div style="position:relative;right:32px;display:none;" id="show3" >
+                        <a class="HamClcikShow" href="https://www.cetustek.com.tw/clients.php#about-clients">嚴選客戶</a>
+                        <a class="HamClcikShow" href="https://www.cetustek.com.tw/clients.php#clients-review">客戶心得</a>
+                    </div>
+                    <li class="Hambuger-NavItems">
+                        <a href="#!" class="Hamgurger-Links">部落格<span style="position: absolute;right:0;" onclick="myFunction4()">✔</span></a>
+                    </li>
+                    <div style="position:relative;right:32px;display:none;" id="show4" >
+                        <a class="HamClcikShow" href="https://www.cetustek.com.tw/blogmtInvoice">電子發票</a>
+                    </div>
+                    <a href="https://www.cetustek.com.tw/memberlogin.php" class="BasicBtn">會員登入</a>
+                </ul>
+            </div>
+        </div>
+        <!--  Hamburger Menu when size under 1200 px Ende -->
+        <!-- Banner Slider Statr -->
+        <div id="showSlider"></div>
+        <!-- Banner Slider Ende -->
+        <div class="gap" style="height:150px;width:100%;"></div>
+       <!--  Hero Section Cetustek Start -->
+       <section class="About-Cetustek"  style="background-image: url('./Images/bg.jpg');background-size: cover;background-repeat: no-repeat; padding-top:20px">
+        <div class="container-fluid p-0" >
+            <div class="row " style="margin-left:60px;">
+                <div class="col-sm-12 col-lg-6 firstCol" style="margin-top:30px;">
+                    <div class="CetustekPara">
+                       <h2 class="col-md-3 text-center p-0 CetustekParaMainTitle ">關於鯨躍</h2>
+                       <P class="CetustekSubTitle">
+                        鯨魚是海中最大的生物，聰慧而又充滿未知，當牠悠游海中時，水面上不易察覺牠們的一舉一動，但當牠們嬉戲或追逐獵物時的躍身擊浪，製造出巨大聲響與浪花，卻往往成為令人們讚嘆的景象！
+                       </P>
+                       <div class="w-100">
+                        <a href="https://www.cetustek.com.tw/about.php" class="BasicBtn">
+                            了解更多
+                        </a>
+                       </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-6">
+                    <img src="https://www.cetustek.com.tw/images/home/home-two-whale.svg" class="img-fluid secCol">
+                </div>
+            </div>
+        </div>
+       </section>
+       <script src="./Scroll.js"></script>
+       <!--  Hero Section Cetustek Ende -->
+       <!-- Hero Section Product Solutions Start -->
+       <section class="ProductSolutions" style="background-image: url('./Images//bg.jpg');background-size: cover;background-repeat: no-repeat;">
+        <h2 class="ProductMainTitle">
+            產品方案
+        </h2>
+        <div class="container text-center" style="margin-left:60px;">
+            <div class="row m-auto" >
+                <div class="col-12 col-lg-3 ProductMainCol">
+                    <a href="https://www.cetustek.com.tw/invoice.php" class="ProductCol">
+                        <div class="col">
+                            <img class="img-fluid"  width="265" height="216" src="./Images//R1.png">
+                        </div>
+                        <div class="col">
+                            <h3 class="ProductSubTitle">電子發票</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-lg-3 ProductMainCol">
+                    <a href="https://www.cetustek.com.tw/invoice.php" class="ProductCol">
+                        <div class="col">
+                            <img class="img-fluid"  width="265" height="216" src="./Images//R2.png">
+                        </div>
+                        <div class="col">
+                            <h3 class="ProductSubTitle">進銷存系統</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-lg-3 ProductMainCol">
+                    <a href="https://www.cetustek.com.tw/invoice.php" class="ProductCol">
+                        <div class="col">
+                            <img class="img-fluid"  width="265" height="216" src="./Images/R3.png">
+                        </div>
+                        <div class="col">
+                            <h3 class="ProductSubTitle">雲端商店</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-lg-3 ProductMainCol">
+                    <a href="https://www.cetustek.com.tw/invoice.php" class="ProductCol">
+                        <div class="col">
+                            <img class="img-fluid"  width="265" height="216" src="./Images/R4.png">
+                        </div>
+                        <div class="col">
+                            <h3 class="ProductSubTitle">訂單平台</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+       </section>
+        <!-- Hero Section Product Solutions Ende -->
+        <!-- Hero Section News Start -->
+        <section class="HeroNews container-fluid" style=" background-image: url('./Images/bg3.jpg');">
+            <div class="NewsCard">
+                <h2 class="NewsMainTitle text-center">
+                    最新消息
+                </h2>
+                <ul>
+                    <li class="NewSubItems">
+                        <div class="NewSubDate">
+                            2023-01-25
+                            <span class="NewSubIcon">🆕</span>
+                            <span class="NewSubIcon">🔥</span>
+                        </div>
+                        <a href="https://www.cetustek.com.tw/news340" class="DataContent">
+                            111年11、12月份發票號碼開獎通知
+                        </a>
+                    </li>
+                    <li class="NewSubItems">
+                        <div class="NewSubDate">
+                            2023-01-17
+                            <span class="NewSubIcon">🆕</span>
+                            <span class="NewSubIcon">🔥</span>
+                        </div>
+                        <a href="https://www.cetustek.com.tw/news339" class="DataContent">
+                            鯨躍科技通過 ISO27001 國際認證標準
+                        </a>
+                    </li>
+                    <li class="NewSubItems">
+                        <div class="NewSubDate">
+                            2022-11-25
+                            <span class="NewSubIcon">🆕</span>
+                            <span class="NewSubIcon">🔥</span>
+                        </div>
+                        <a href="https://www.cetustek.com.tw/news340" class="DataContent">
+                            111年09、10月份發票號碼開獎通知
+                        </a>
+                    </li>
+                    <li class="NewSubItems">
+                        <div class="NewSubDate">
+                            2018-06-13
+                            <span class="NewSubIcon">🆕</span>
+                            <span class="NewSubIcon">🔥</span>
+                        </div>
+                        <a href="https://www.cetustek.com.tw/news198" class="DataContent">
+                            107年6月13日財政部修正發布統一發票給獎辦法部分條文
+                        </a>
+                    </li>
+                    <li class="NewSubItems">
+                        <div class="NewSubDate">
+                            2017-12-05
+                            <span class="NewSubIcon">🆕</span>
+                            <span class="NewSubIcon">🔥</span>
+                        </div>
+                        <a href="https://www.cetustek.com.tw/news198" class="DataContent">
+                            手機條碼、自然人憑證條碼與捐贈碼檢核規則
+                        </a>
+                    </li>
+                    <li class="NewSubItems">
+                        <div class="NewSubDate">
+                            2017-01-20
+                            <span class="NewSubIcon">🆕</span>
+                            <span class="NewSubIcon">🔥</span>
+                        </div>
+                        <a href="https://www.cetustek.com.tw/news198" class="DataContent">
+                            財政部修正發布「電子發票實施作業要點」 規定
+                        </a>
+                    </li>
+                    <li class="NewSubItems">
+                        <div class="NewSubDate">
+                            2014-10-03
+                            <span class="NewSubIcon">🆕</span>
+                            <span class="NewSubIcon">🔥</span>
+                        </div>
+                        <a href="https://www.cetustek.com.tw/news198" class="DataContent">
+                            電子發票正式修改為第六類發票
+                        </a>
+                    </li>
+                    <li class="NewSubItems">
+                        <div class="NewSubDate">
+                            2013-11-08
+                            <span class="NewSubIcon">🆕</span>
+                            <span class="NewSubIcon">🔥</span>
+                        </div>
+                        <a href="https://www.cetustek.com.tw/news198" class="DataContent">
+                            電子發票會員載具「鯨躍發票卡」正式啟用
+                        </a>
+                    </li>
+                    <li class="NewSubItems">
+                        <div class="NewSubDate">
+                            2013-09-04
+                            <span class="NewSubIcon">🆕</span>
+                            <span class="NewSubIcon">🔥</span>
+                        </div>
+                        <a href="https://www.cetustek.com.tw/news198" class="DataContent">
+                            鯨躍科技已完全支援新版紙本電子發票證明聯
+                        </a>
+                    </li>
+                    <li class="NewSubItems" id="NewsReaminItems">
+                        <div class="NewSubDate">
+                            2013-06-27
+                            <span class="NewSubIcon">🆕</span>
+                            <span class="NewSubIcon">🔥</span>
+                        </div>
+                            <a href="https://www.cetustek.com.tw/news198" class="DataContent">
+                                歡迎POS廠商 洽談電子發票系統整合
+                            </a>
+                    </li>
+                    <li class="NewSubItems" id="NewsReaminItems2">
+                        <div class="NewSubDate">
+                            2013-06-01
+                            <span class="NewSubIcon">🆕</span>
+                            <span class="NewSubIcon">🔥</span>
+                            </div>
+                        <a href="https://www.cetustek.com.tw/news198" class="DataContent">
+                                本公司已具備財政部消費通路電子發票加值中心資格
+                        </a>
+                    </li>               
+                    <input onclick="moreFunction()" value="閱讀更多" type="button" 
+                    class="BasicBtn4" id="showbutton" style="margin-top:27px;">
+                </ul>
+            </div>
+        </section>
+        <!-- Hero Section News Ende -->
+        <!-- Hero Section Partners Start -->
+        <div id="showSlider2"></div>
+        <!-- Hero Section Partners Ende -->
+        <!-- Hero Section Number Start -->
+        <section class="HeroNumber" style="background-image: url('./Images/AboutNumber.webp');">
+            <div class="container-fluid text-center p-0d">
+                <div class="row justify-content-between setBg" style="background-image: url('./Images/NumberBg.png');">
+                    <div class="col-md-6 col-sm-12 text-center " style="border:2px solid white;">
+                        <img src="./Images/CustomerNumber.svg" class="img-fluid">
+                        <p class="NumberMainTitle">客戶數量</p>
+                        <span class="NumberMainTitle" id="count1">6367</span>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-center" style="border:2px solid white;">
+                        <img src="./Images/InvoiceNumber.svg" class="img-fluid">
+                        <p class="NumberMainTitle">發票數量</p>
+                        <span class="NumberMainTitle" id="count1">636799999</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Hero Section Number Ende -->
+        <div>
+            <a href="#!" class="BackTop" onclick="topFunction()">
+                <img src="./Images/BackTop1.svg" class="hide" style="width:64px;height:64px;" id="hideImg" onmouseover="newPic()" onmouseout="oldPic()"
+                >  
+                <!-- <img src="./Images/BackTop2.svg" class="show" style="width:64px;height:64px;" id="showImg" onclick="topFunction()">   -->
+            </a>
+        </div>
+        <!-- Footer Start -->
+        <footer class="FooterPage">
+            <div class="container-fluid text-center text-md-left">
+                <div class="row p-md-5">
+                    <div class="col-lg-4 mt-5 mt-md-0 ">
+                       <div class="FooterLogos">
+                         <img src="./Images/FooterLogo1.svg" class="col-12 col-md-4 mb-3 pl-0 " style="width:158px;height:88px;">
+                         <a href="#!">
+                            <img src="./Images/FooterLogo2.png" class="img-fluid mb-3">
+                         </a>
+                         <div class="col-12 col-md-6 pt-2 mb-3 d-md-block text-start">
+                            <a href="https://lin.ee/8yBlcK9" >
+                                <img src="./Images/FooterLine.svg" class="img-fluid">
+                            </a>
+                            <a href="https://www.facebook.com/Cetustek/">
+                                <img src="./Images/FooterFacebook.svg" class="img-fluid">
+                            </a>
+                         </div>
+                       </div>
+                       <div class="FooterInfo col-lg  d-md-block p-0">
+                         <div class="InfoIcon">
+                            <i class="fa-regular fa-envelope"></i>
+                            客服信箱 :
+                            <a href="mailto:svc@cetustek.com.tw">svc@cetustek.com.tw</a>
+                         </div>
+                       </div>
+                        <div class="InfoIcon">
+                            <i class="fas fa-clock"></i>
+                            客服時間：上班日<strong>AM9：00~12：00，PM13：30~18:30</strong>
+                        </div>
+                        <div class="InfoIcon">
+                            <i class="fas fa-concierge-bell"></i>
+                            客戶服務：02-28928168 (主要代表號)、02-77518098
+                        </div>
+                    </div>
+                    <div class="col-lg-8 " >
+                        <div class="FooterItems row">
+                            <div class="col-lg-3 mb-lg-0 mb-3">
+                                <h5 class="FooterMainTitle">About Us</h5>
+                                <ul class="Nonelist">
+                                    <li>
+                                        <a href="https://www.cetustek.com.tw/about.php">關於鯨躍</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.cetustek.com.tw/newslist.php">最新消息</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.cetustek.com.tw/contact.php">聯繫我們</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.cetustek.com.tw/securitypolicy.php">資安政策</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.cetustek.com.tw/privacypolicy.php">隱私權政策</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 mb-lg-0 mb-3">
+                                <h5 class="FooterMainTitle">Product</h5>
+                                <ul class="Nonelist">
+                                    <li>
+                                        <a href="https://www.cetustek.com.tw/invoice.php">電子發票</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!">進銷存系統</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!">雲端商店</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!">訂單平台</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 mb-lg-0 mb-3">
+                                <h5 class="FooterMainTitle">Links</h5>
+                                <ul class="Nonelist">
+                                    <li>
+                                        <a href="https://www.cetustek.com.tw/carrier.php">鯨躍發票卡</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.cetustek.com.tw/famiinv.php">全家發票列印</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://partner.cetustek.com.tw/">經銷商專區</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.cetustek.com.tw/bloghome.php">部落格</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 mb-lg-0 mb-3">
+                                <h5 class="FooterMainTitle">E-Invoice Platform</h5>
+                                <ul class="Nonelist">
+                                    <li>
+                                        <a href="https://www.ei.com.tw/Invoice/">電子發票加值中心</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://gasinv.ei.com.tw/gaslist.php">公用事業電子發票會員平台</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://gym.ei.com.tw/">世界健身電子發票會員平台
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Ende -->
+        <!-- CopyRight Start -->
+        <div class="CopyRight">
+            Copyright © 2021 鯨躍科技有限公司 All Rights Reserved
+        </div>
+    </div>
+    <script src="./Show.js"></script>
+    <script>
+        function newPic(){
+            document.getElementById("hideImg").src="Images/BackTop2.svg";
+        }
+        function oldPic(){
+            document.getElementById("hideImg").src="Images/BackTop1.svg";
+        }
+        function topFunction(){
+            document.body.scrollTop=0;
+            document.documentElement.scrollTop=0;
+        }
+    </script>
+    <script>
+     
+    </script>
+</body>
+</html>

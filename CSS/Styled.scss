@@ -1,0 +1,501 @@
+*{
+    margin:0;
+    padding:0;
+    position: relative;
+    box-sizing: border-box;
+}
+body,html{
+    width:100%;
+    font-family: 'Noto Sans TC',sans-serif;
+    color: #2E3239;
+}
+.wrapper{
+    max-width:100%;
+    height:auto;
+    background-color:white;
+}
+// Component Button Start
+// Basic form of button
+%ButtonBasicForm{
+    background: #fff;
+    border: solid 2px #0E6EB8;
+    color: #0E6EB8;
+    font-weight: 600;
+    white-space: nowrap;
+    line-height: 1;
+    box-sizing: border-box;
+    font-size: 18px;
+    text-decoration: none;
+    display:inline-flex;
+    flex-direction: row;
+    align-content: normal;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.BasicBtn{
+    width:180px;
+    height:30px;
+    @extend%ButtonBasicForm;
+    padding: 5px 20px;
+    border-radius: 25px;
+}
+.BasicBtn4{
+    width:120px;
+    height:26px;
+    background: #fff;
+    border: solid 2px #0E6EB8;
+    color: #0E6EB8;
+    font-weight: 600;
+    border-radius: 25px;
+    margin-left:40%;
+}
+@media screen and (max-width:400px){
+    .BasicBtn4{
+        margin-left:0;
+    }
+}
+.Nav-Links.BasicBtn:hover{
+    color:white;
+    background-color: #007aff;
+}
+.BasicBtn:hover{
+    color:white;
+    background-color: #007aff;
+}
+.BasicBtn4:hover{
+    color:white;
+    background-color: #007aff;
+}
+@media screen and (max-width:768px){
+    .BasicBtn{
+        width:100%;
+        text-align: center;
+    }
+    .firstCol{
+        margin-bottom:40px;
+    }
+}
+// Layout --Navbar Start
+%FlexForm{
+    display:flex;
+    flex-direction: row;
+}
+.Navbar{
+    @extend%FlexForm;
+    background-color: #fff;
+    padding-top:12px;
+    padding-bottom:12px;
+    position: fixed;
+    width:100%;
+    z-index: 3;
+}
+.NavLogo{
+    background-image: url('https://www.cetustek.com.tw/images/logo/main-logo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display:block;
+    width:394px;
+    height:52px;
+}
+// Here is about Navitems inside Navbar
+.Navbar-nav{
+    @extend%FlexForm;
+    list-style: none;
+    position: absolute;
+}
+.Nav-Items{
+    color:#2E3239;
+    width:88px;
+    height:43px;
+    margin-right:40px;
+    position: relative;
+}
+%FontBasicForm{
+    font-weight: 600;
+    font-family: 微軟正黑體;
+    font-size: 18px;
+    color:#2E3239;
+}
+.Nav-Links{
+    @extend%FontBasicForm;
+    color: rgb(46, 50, 57);
+    position: absolute;
+    top:15px;
+    box-sizing: border-box; 
+    text-decoration: none;
+}
+.Nav-Links:hover{
+    color: rgb(0, 123, 255);
+}
+// Here is about DropDown Menu when mouse hover on it
+.dropdown-options{
+   position: relative;
+   top:45px;
+   right:35px;
+   overflow:auto;
+   display: none;
+   width:150px;
+   height:auto;
+   background-color: #fff;
+   border-top:3px solid rgb(0, 123, 255);
+   text-align: center;
+  
+}
+.options-link{
+    z-index: 5;
+    @extend%FontBasicForm;
+    display:block;
+    text-decoration: none;
+    padding:0px;
+    margin:10px 0;
+}
+.Nav-Items:hover .dropdown-options {
+    display: block;
+    z-index: 5;
+    
+}
+.Nav-Items:hover .dropdown-options:hover .options-link {
+    display: block;
+    background-color: #ececec;
+    color:rgb(0, 123, 255);
+    z-index: 5;
+}
+// Hero is all about Hamburger Icon when width undter 1200px 
+.Navbar-Hambuger{
+    position: absolute;
+    right:0;
+    top:20px;
+    display:none;
+}
+@media screen and (max-width:1200px){
+    .Navbar{
+        width:100%;
+    }
+    .Navbar-Hambuger{
+        display:block;
+    }
+    .Navbar-collect{
+        display:none;
+    }.Hamgurger-Links{
+        margin:5px 0;
+    }.NavLogo{
+        width:300px;
+        height:45px;
+    }
+}
+.Hambuger-Menu{
+    width:315px;
+    height:auto;
+    background-color: #fff;
+    position: absolute;
+    top:75px;
+    right:0;
+    z-index: 2;
+    display:none;
+}
+
+.Hambuger-NavItems{
+    border-bottom:2px solid #c4c4c4;
+    list-style: none;
+    margin:20px 0;
+    position: relative;
+    padding-bottom:12px;
+    right:30px;
+}
+.Hamgurger-Links{
+    position: relative;
+    right:20px;
+    text-decoration: none;
+    @extend%FontBasicForm;
+    display:block;
+    padding: 0 24px;
+}
+.HamClcikShow{
+    @extend%FontBasicForm;
+    text-decoration: none;
+    display:block;
+    border-bottom:1px solid #c4c4c4;
+    text-align: center;
+    color: #686D74;
+    padding-bottom:15px 0;
+}
+.HamClcikShow:hover{
+    background-color: #93f2ef;
+}
+// Layout --Navbar Ende
+// Layout -- Hero Section About-Cetustek
+.About-Cetustek{ 
+    height:auto;
+    padding:50px 148px 50px 50px;
+}
+.CetustekPara{
+  margin:0 auto;
+ }
+ .CetustekParaMainTitle::before{
+    content: url("https://www.cetustek.com.tw/images/all/label-deco.svg");
+    left: 50%;
+    transform: translate(-50%,-40px);
+    position: absolute;
+ }
+ .CetustekParaMainTitle{
+    font-size: 28px;
+    text-align:left;
+    color: #007aff;
+    font-weight: 800;
+ }
+ .CetustekSubTitle{
+    font-size: 20px;
+    line-height: 45px;
+    font-weight: 700;
+    color:black;
+    margin-bottom:40px;
+ }
+// Layout -- Hero Section About-Cetustek Ende
+
+// Layout ---Hero Section ProductSolutions Start
+.ProductSolutions{
+    height:auto;
+    padding:20px 90px 0 0;
+    margin-top:48px;    
+}
+.ProductMainTitle{
+    padding-top:30px;
+    display:block;
+    text-align: center;
+    margin-bottom:32px;
+    color: #007aff;
+    font-size: 28px;
+    font-weight: 800;
+}
+.ProductMainTitle::before{
+    transform: translate(-50%,-30px);
+    position: absolute;
+    left: 50%;
+    content:url('https://www.cetustek.com.tw/images/all/label-deco.svg');
+}
+.ProductCol{
+    display:block;
+    text-decoration: none;
+    padding:30px;
+}
+.ProductSubTitle{
+    color:black;
+    font-weight: 600;
+}
+.ProductMainCol:hover{
+    box-shadow: 0 0 15px 5px gray;
+}
+@media screen and (max-width:992px){
+    .ProductCol{
+        display:flex;
+    }
+    .ProductMainCol{
+        background-color: white;
+        border:1px solid #d1d1d1;
+        margin:20px 0;
+    }.ProductSubTitle{
+        position: relative;
+        top:35%;
+    }
+    .ProductMainCol:hover{
+        box-shadow: 0 0 0 0 white;
+    }
+}
+// Layout ---Hero Section ProductSolutions Ende
+
+// Layout ---Hero Section News Start
+.HeroNews{
+    height:auto;
+    position: relative; 
+    padding-top: 10%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.NewsCard:before{
+    content:url(../Images/w1.png);
+    position: absolute;
+    left:75%;
+    top:-300px;
+    border:2px solid green;
+    width:400px;
+    height:400px;
+}
+.NewsCard:after{
+    content: url(../Images/w2.png);
+    position: absolute;
+    bottom: -10%;
+    right: 75%;
+    border:2px solid red;
+    width:400px;
+    height:400px;
+}
+.HeroNews .NewsCard{
+    min-height:auto;
+    max-width: 1300px;
+    padding: 5%;
+    margin: auto;
+    background-color: white;
+}
+.NewsMainTitle {
+    font-weight: 600;
+    font-size: 36px;
+    color: #0E6EB8;
+    white-space: nowrap;
+    margin-bottom: 2rem;
+    padding-top: 30px;
+}
+.NewsMainTitle::before{
+    content: url('https://www.cetustek.com.tw/images/all/label-deco.svg');
+    left: 50%;
+    transform: translate(-50%,-40px);
+    position: absolute;
+}
+.HeroNews .NewsCard ul{
+    margin-bottom:1rem;
+    list-style: none;
+    position: relative;
+}
+.NewSubItems{
+    padding:16px;
+    border-bottom:0.5px solid #e6e6e6;
+    display: list-item;
+}
+.NewSubDate{
+    margin-bottom: 1rem;
+    font-family: '微軟正黑體';
+    font-weight: 600;
+    font-size: 15px;
+    color: #0E6EB8;
+}
+.NewSubIcon{
+    margin-left:6px;
+}
+.DataContent{
+    display:block;
+    text-decoration: none;
+    color:black;
+    font-size: 16px;
+    font-weight: 700;
+}
+#NewsReaminItems{
+    display:none;
+}
+// Layout ---Hero Section News Ende
+
+// Layout ---Hero Section Number Start
+.HeroNumber{
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height:auto;
+    background-attachment:fixed;
+    border-bottom:1px solid lightgrey;
+}
+.setBg{
+    background-size: cover;
+    background-position: center;
+    display: flex; 
+    align-items: center;
+    min-height: 600px;
+    justify-content: center;
+    margin: auto;
+    color: #fff;
+}
+@media screen and (max-width:768px){
+    .NumberMainTitle{
+        font-size: 20px;
+    }
+}
+.NumberMainTitle{
+    font-weight: 500;
+    font-size: 36px;
+    font-family: 微軟正黑體;
+    color:white;
+}
+// Layout ---Hero Section Number Ende
+
+// Layout --- Footer Section Start
+.FooterPage{
+    height:auto;
+}
+.FooterLogos{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-content: normal;
+}
+.FooterInfo{
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom:10px;
+    text-align:left;
+}
+.InfoIcon{
+    margin-bottom:0.5rem;
+    white-space: nowrap;
+    font-weight: 500;
+}
+.FooterMainTitle{
+    font-weight: 700;
+    font-size: 19px;
+    color: #0E6EB8;
+    margin-bottom: 1rem;
+    white-space: nowrap;
+}
+.Nonelist{
+    padding-left: 0;
+    list-style: none;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.Nonelist li{
+    margin:15px 0;
+}
+.Nonelist a{
+    color: rgb(46, 50, 57);
+    font-weight: 600;
+    font-family: 微軟正黑體;
+    text-decoration: none;
+}
+// Layout --- Footer Section Start
+
+// CopyRight Start
+.CopyRight{
+    background: #2E3239;
+    color: #fff;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: normal;
+    text-align: center;
+    padding:1rem 0;
+}
+// CopyRight Ende
+.BackTop{
+    position: fixed;
+    right: 10px;
+    z-index: 9;
+    bottom: 60px;
+    opacity: 1;
+    cursor:pointer;
+    transition: 1s;
+    text-decoration: none;
+    display:block;
+}
+//  .BackTop img{
+//    overflow-clip-margin: content-box;
+//    overflow: clip;
+//    max-width: 100%;
+//    height: auto;
+//  }
+//  .BackTop .show{
+//    right: 0;
+//    left: unset;
+//   position: absolute;
+//  }
+
+
+
